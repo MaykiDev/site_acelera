@@ -1,0 +1,274 @@
+:root {
+    --fonte:'Montserrat', sans-serif;
+    --cor_fundo: #000;
+    --cor_fundo_menu: #1e1e1e;
+    --cor_fonte: #ffffff;
+    --cor_primaria: #2E2868;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte);
+    background-color: var(--cor_fundo);
+}
+
+.cabecalho {
+    background-color: var(--cor_fundo_menu);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%; /* Adiciona um respiro nas laterais */
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 40px;
+    display: block;
+}
+
+/* ------ MENU MOBILE ------ */
+.nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--cor_fundo_menu);
+    padding: 1rem;
+    text-align: center;
+}
+
+.nav.active {
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li a {
+    display: block;
+    padding: 1rem;
+    color: var(--cor_fonte);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* -- BOTÃO DE VAGA -- */
+.btn-vaga {
+    background-color: #f2c94c;
+    color: #000;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: 0.3s;
+}
+
+.btn-vaga:hover {
+    background-color: #ffd65a;
+    transform: scale(1.05);
+}
+
+/* -- HAMBUGUER -- */
+.btn-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; /* Garante que fique acima do menu */
+}
+
+.hamburguer {
+    width: 100%;
+    height: 3px;
+    background: var(--cor_fonte);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    transform-origin: center;
+}
+
+/* Transformação para o 'X' quando o nav estiver ativo */
+.btn-mobile.active .hamburguer:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.btn-mobile.active .hamburguer:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.btn-mobile.active .hamburguer:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* --- SEÇÃO HERO --- */
+.hero {
+    padding: 100px 20px 60px 20px; /* Espaço para o menu fixo */
+    background-color: var(--cor_fundo);
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo horizontalmente */
+    text-align: center;
+}
+
+.hero-imagem {
+    margin-bottom: 20px;
+}
+
+.hero-imagem img {
+    max-width: 425px; /* Limita o tamanho para não estourar em tablets */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-logo-main {
+    max-width: 415px;
+    margin-top: -100px;
+    margin-bottom: 25px;
+}
+
+.hero-titulo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--cor_fonte);
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.hero-texto {
+    color: var(--cor_fonte);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.vagas-alerta {
+    color: #F7C311;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-bottom: 30px;
+}
+
+.btn-hero-vaga {
+    background-color: #2E2868; /* Roxo do seu design */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 100%; /* Botão largo no mobile */
+    max-width: 320px;
+    transition: 0.3s;
+}
+
+/* ------ TELA DESKTOP ------ */
+@media (min-width: 1000px) {
+    .container {
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    .btn-mobile {
+        display: none;
+    }
+
+    .nav {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        padding: 0;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .menu li a {
+        padding: 0 15px;
+        font-size: 0.85rem;
+    }
+
+    .btn-vaga {
+        margin-top: 0;
+        margin-left: 20px;
+    }
+
+    .hero-container {
+        flex-direction: row-reverse; /* Inverte: Imagem na direita, texto na esquerda */
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        max-width: 1355px;
+        gap: 50px;
+    }
+
+    .hero-imagem {
+        margin-bottom: 20px;
+    }
+
+    .hero-imagem img {
+        max-width: 600px; /* Limita o tamanho para não estourar em tablets */
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .hero-content {
+        align-items: flex-start; /* Alinha texto à esquerda no PC */
+        flex: 1;
+    }
+
+    .hero-imagem {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    .hero-logo-main {
+        max-width: 500px;
+        margin-top: 65px;
+        margin-bottom: 25px;
+    }
+
+    .hero-titulo {
+        font-size: 1.3rem;
+        font-style: italic;
+    }
+}
