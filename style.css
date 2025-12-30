@@ -136,21 +136,21 @@ body {
 }
 
 .hero-logo-main {
-    width: 85%;
-    max-width: 380px;
+    width: 100%;
+    max-width: 510px;
     margin-bottom: 20px;
 }
 
 .hero-titulo {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-style: italic;
-    font-weight: 800;
+    font-weight: 600;
     margin-bottom: 15px;
     padding: 0 10px;
 }
 
 .hero-texto {
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0.9;
     margin-bottom: 20px;
     padding: 0 15px;
@@ -179,7 +179,7 @@ body {
 /* --- SEÇÃO SOBRE (FUNDO CINZA) --- */
 .sobre {
     background-color: #E1E1E1;
-    border-radius: 40px 40px 0 0;
+    border-radius: 40px;
     padding-bottom: 60px;
     position: relative;
     z-index: 10;
@@ -299,12 +299,12 @@ body {
     .hero-container {
         flex-direction: row-reverse;
         text-align: left;
-        padding: 100px 5%;
-        gap: 50px;
+        padding: 55px 5%;
+        gap: 100px;
     }
 
     .hero-imagem img {
-        max-width: 1000px;
+        max-width: 1200px;
     }
 
     .hero-content {
@@ -312,7 +312,8 @@ body {
     }
 
     .hero-titulo {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
+        font-style: italic;
         padding: 0;
     }
 
