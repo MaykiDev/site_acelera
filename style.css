@@ -118,7 +118,7 @@ body {
     font-style: italic;
 }
 
-/* --- HERO --- */
+/* ------ SEÇÃO 1 ------ */
 .hero {
     padding: 120px 0 80px 0;
     text-align: center;
@@ -139,18 +139,18 @@ body {
 .hero-logo-main {
     width: 100%;
     max-width: 510px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .hero-titulo {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-style: italic;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .hero-texto {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     opacity: 0.9;
     margin-bottom: 20px;
     padding: 0 15px;
@@ -159,8 +159,8 @@ body {
 .vagas-alerta{
     color: var(--cor_detalhe);
     font-weight: bold;
-    font-size: 0.9rem;
-    margin-bottom: 30px;
+    font-size: 0.8rem;
+    margin-bottom: 40px;
 }
 
 .btn-hero-vaga {
@@ -169,7 +169,7 @@ body {
     padding: 18px 40px;
     border-radius: 15px;
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 800;
     font-style: italic;
     display: inline-block;
@@ -177,7 +177,7 @@ body {
     max-width: 320px;
 }
 
-/* --- SOBRE (FUNDO CINZA) --- */
+/* ------ SOBRE (FUNDO CINZA) ------ */
 .sobre {
     background-color: #E1E1E1;
     border-radius: 40px 40px 0 0;
@@ -333,11 +333,41 @@ body {
         background-color: #ddae12;
     }
 
+    /* ------ SEÇÃO 1 ------ */
     .hero-container {
         flex-direction: row-reverse;
         text-align: left;
         padding: 55px 5%;
         gap: 100px;
+    }
+
+    .hero-imagem img {
+        max-width: 700px;
+        margin-bottom: -55px;
+    }
+
+    .hero-logo-main {
+        max-width: 600px;
+        margin-bottom: 30px;
+    }
+
+    .hero-titulo {
+        font-size: 1.8rem;
+        font-style: italic;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .hero-texto {
+        font-size: 1rem;
+        opacity: 0.9;
+        padding: 0;
+    }
+
+    .vagas-alerta{
+        color: var(--cor_detalhe);
+        font-weight: bold;
+        font-size: 1rem;
     }
 
     .marquee-track .foto {
