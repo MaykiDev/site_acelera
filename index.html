@@ -2,101 +2,36 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Acelera Mato Grosso | Evento de Inovação e Networking</title>
-    <meta name="description" content="Garanta sua vaga no Acelera Mato Grosso em Sinop. Um dia de conteúdo prático e conexões estratégicas.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700;1,800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acelera Mato Grosso</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="cabecalho">
-        <div class="conteiner">
-            <a href="#" class="logo-menu" aria-label="Acelera Mato Grosso Home">
-                <img src="assent/logo-1.svg" alt="Logo da Acelera Mato Grosso">
-            </a>
 
-            <button class="btn-mobile" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-                <span class="hamburguer"></span>
-                <span class="hamburguer"></span>
-                <span class="hamburguer"></span>
-            </button>
-
-            <nav class="nav" id="nav">
-                <ul class="menu" role="menu">
-                    <li><a href="#sobre">Sobre o Evento</a></li>
-                    <li><a href="#palestrantes">Palestrantes</a></li>
-                    <li><a href="#patrocinador">Seja Patrocinador</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-                <a href="#vaga" class="btn-vaga">GARANTIR MINHA VAGA</a>
-            </nav>
+    <header class="navbar">
+        <div class="logo">
+            <img src="assent/logo-1.svg" alt="Acelera Mato Grosso">
         </div>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#">Sobre o Evento</a></li>
+                <li><a href="#">Palestrante</a></li>
+                <li><a href="#">Seja Patrocinador</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li class="nav-button-container">
+                    <a href="#" class="btn-vaga">Garantir minha vaga</a>
+                </li>
+            </ul>
+        </nav>
     </header>
-
-    <main>
-        <section class="hero">
-            <div class="hero-container">
-                <div class="hero-imagem">
-                    <img src="assent/art-1.png" alt="Palestrantes do Evento">
-                </div>
-
-                <div class="hero-content">
-                    <img src="assent/logo-1.svg" alt="Acelera Mato Grosso" class="hero-logo-main">
-                    <h1 class="hero-titulo">Evento de inovação, negócios e networking em Sinop-MT</h1>
-                    <p class="hero-texto">Um dia de conteúdo prático e conexões estratégicas para acelerar empresas, projetos e carreiras em Mato Grosso.</p>
-                    <p class="vagas-alerta">Vagas limitadas para manter a experiência de alto nível!</p>
-                    <a href="#vaga" class="btn-hero-vaga">GARANTIR MINHA VAGA</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="sobre" id="sobre">
-            <div class="container-sobre">
-                
-                <div class="contador-wrapper">
-                    <div class="timer" id="timer">
-                        <div class="tempo-unidade"><span id="meses">00</span><p>meses</p></div>
-                        <div class="tempo-unidade"><span id="dias">00</span><p>dias</p></div>
-                        <div class="tempo-unidade"><span id="horas">00</span><p>horas</p></div>
-                        <div class="tempo-unidade"><span id="minutos">00</span><p>minutos</p></div>
-                    </div>
-                </div>
-
-                <div class="sobre-info">
-                    <h2 class="sobre-titulo">O que é o Acelera Mato Grosso?</h2>
-                    <p class="sobre-texto">
-                        O Acelera Mato Grosso é um evento criado para fortalecer o ecossistema local, reunindo pessoas e organizações para falar de crescimento, inovação e execução. Aqui o foco é sair do "conceito" e levar você para a prática: estratégias, ferramentas e trocas reais com quem faz acontecer em Sinop e em todo o MT.
-                    </p>
-                </div>
-
-                <div class="marquee-container">
-                    <div class="marquee-track track-superior">
-                        <div class="foto"><img src="assent/9.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/10.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/11.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/12.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/9.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/10.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/11.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/12.png" alt="Evento"></div>
-                    </div>
-                </div>
-
-                <div class="marquee-container">
-                    <div class="marquee-track track-inferior">
-                        <div class="foto"><img src="assent/13.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/14.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/9.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/10.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/13.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/14.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/9.png" alt="Evento"></div>
-                        <div class="foto"><img src="assent/10.png" alt="Evento"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
 
     <script src="script.js"></script>
 </body>
