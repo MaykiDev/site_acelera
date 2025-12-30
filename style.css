@@ -1,3 +1,4 @@
+/* ---- VÁRIAVEIS ---- */
 :root {
     --fonte: 'Montserrat', sans-serif;
     --cor_fundo: #000;
@@ -7,6 +8,7 @@
     --cor_detalhe: #F7C311;
 }
 
+/* ---- REGRAS PADRÃO DO SITE ---- */
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +22,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- HEADER --- */
+/* ------ CABEÇALHO (MENU) ------ */
 .cabecalho {
     background-color: var(--cor_fundo_menu);
     padding: 1rem 0;
@@ -29,7 +31,7 @@ body {
     z-index: 1000;
 }
 
-.container {
+.conteiner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,11 +40,11 @@ body {
     margin: 0 auto;
 }
 
-.logo img {
-    height: 40px;
+.logo-menu img {
+    height: 55px;
 }
 
-/* --- MENU MOBILE --- */
+/* --  BOTÃO HAMBURGUER -- */
 .btn-mobile {
     display: flex;
     flex-direction: column;
@@ -74,6 +76,7 @@ body {
     transform: translateY(-9px) rotate(-45deg);
 }
 
+/* -- OPÇÃO DO MENU -- */
 .nav {
     display: none;
     flex-direction: column;
@@ -96,28 +99,26 @@ body {
 
 .menu li a {
     display: block;
-    padding: 1rem;
+    padding: 0.8rem;
     color: var(--cor_fonte);
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 540;
+    font-style: italic;
 }
 
+/* -- BOTÃO MENU -- */
 .btn-vaga {
     background-color: var(--cor_detalhe);
     color: #000;
     padding: 12px 25px;
     border-radius: 25px;
     text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
+    font-weight: 540;
+    font-style: italic;
 }
 
-.btn-vaga:hover {
-    background-color: #c5990a;
-}
-
-/* --- HERO SECTION --- */
+/* --- HERO --- */
 .hero {
     padding: 120px 0 80px 0;
     text-align: center;
@@ -146,7 +147,6 @@ body {
     font-style: italic;
     font-weight: 600;
     margin-bottom: 15px;
-    padding: 0 10px;
 }
 
 .hero-texto {
@@ -156,7 +156,7 @@ body {
     padding: 0 15px;
 }
 
-.vagas-alerta {
+.vagas-alerta{
     color: var(--cor_detalhe);
     font-weight: bold;
     font-size: 0.9rem;
@@ -172,30 +172,26 @@ body {
     font-size: 1.4rem;
     font-weight: 800;
     font-style: italic;
+    display: inline-block;
     width: 90%;
     max-width: 320px;
 }
 
-/* --- SEÇÃO SOBRE (FUNDO CINZA) --- */
+/* --- SOBRE (FUNDO CINZA) --- */
 .sobre {
     background-color: #E1E1E1;
-    border-radius: 40px;
-    padding-bottom: 60px;
+    border-radius: 40px 40px 0 0;
+    padding-bottom: 80px;
     position: relative;
     z-index: 10;
+    margin-top: 50px;
+    overflow: hidden;
 }
 
-.container-sobre {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* CONTADOR */
 .contador-wrapper {
     display: flex;
     justify-content: center;
-    transform: translateY(-50%); /* Faz flutuar entre as seções */
+    transform: translateY(-50%);
 }
 
 .timer {
@@ -221,58 +217,101 @@ body {
     font-size: 0.7rem;
     font-weight: bold;
     font-style: italic;
-}
-
-/* GALERIA CARROSSEL */
-.sobre-galeria {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    padding: 0 20px 30px 20px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-}
-
-.sobre-galeria::-webkit-scrollbar {
-    display: none;
-}
-
-.foto {
-    flex: 0 0 80%;
-    scroll-snap-align: center;
-}
-
-.foto img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 25px;
+    color: #fff;
 }
 
 .sobre-info {
     text-align: center;
-    padding: 0 25px;
+    padding: 40px 25px 20px 25px;
     color: var(--cor_primaria);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .sobre-titulo {
     font-style: italic;
     font-weight: 800;
     margin-bottom: 15px;
+    font-size: 1.8rem;
 }
 
 .sobre-texto {
     font-style: italic;
     line-height: 1.6;
     color: #333;
+    font-size: 1.1rem;
+}
+
+/* --- CARROSSEL INFINITO --- */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    padding: 10px 0;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+}
+
+.marquee-track .foto {
+    flex: 0 0 280px;
+}
+
+.marquee-track .foto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ANIMAÇÕES */
+@keyframes scrollEsquerda {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-280px * 4 - 20px * 4));
+    }
+}
+
+@keyframes scrollDireita {
+    from {
+        transform: translateX(calc(-280px * 4 - 20px * 4));
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.track-superior {
+    animation: scrollEsquerda 25s linear infinite;
+}
+
+.track-inferior {
+    animation: scrollDireita 25s linear infinite;
 }
 
 /* --- DESKTOP --- */
 @media (min-width: 1000px) {
+
+    /* ------ CABEÇALHO (MENU) ------- */
+    .cabecalho {
+        background-color: var(--cor_fundo_menu);
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
     .btn-mobile {
         display: none;
     }
 
+    /* -- OPÇÃO DO MENU -- */
     .nav {
         display: flex !important;
         position: static;
@@ -280,20 +319,18 @@ body {
         background: none;
         padding: 0;
         flex-direction: row;
-        align-items: baseline;
     }
 
     .menu {
-        display:flex;
+        display: flex;
     }
 
-    .menu li a {
-        font-weight: 600;
-        font-style: italic;
-    }
-    
     .menu li a:hover {
         color: #F7C311;
+    }
+
+    .btn-vaga:hover{
+        background-color: #ddae12;
     }
 
     .hero-container {
@@ -303,45 +340,29 @@ body {
         gap: 100px;
     }
 
-    .hero-imagem img {
-        max-width: 1200px;
+    .marquee-track .foto {
+        flex: 0 0 400px;
     }
 
-    .hero-content {
-        align-items: flex-start;
+    .marquee-track .foto img {
+        height: 280px;
     }
 
-    .hero-titulo {
-        font-size: 1.8rem;
-        font-style: italic;
-        padding: 0;
+    @keyframes scrollEsquerda {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-400px * 4 - 20px * 4));
+        }
     }
 
-    .hero-texto {
-        padding: 0;
+    @keyframes scrollDireita {
+        from {
+            transform: translateX(calc(-400px * 4 - 20px * 4));
+        }
+        to {
+            transform: translateX(0);
+        }
     }
-
-    .sobre-grid {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        padding: 40px 5%;
-        gap: 60px;
-    }
-
-    .sobre-info {
-        flex: 1;
-        text-align: left;
-        padding: 0;
-    }
-
-    .sobre-galeria {
-        flex: 1;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        overflow: visible;
-        padding: 0;
-    }
-    .foto {
-        flex: none; }
 }
