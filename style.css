@@ -185,6 +185,8 @@ body {
 
 /* ------ RESPONSIVIDADE ------ */
 @media (max-width: 992px) {
+
+    /* ------ MENU MOBILE ------ */
     .logo img {
         height: 35px;
     }
