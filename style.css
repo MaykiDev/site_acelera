@@ -69,7 +69,7 @@ body {
 .btn-vaga:hover {
     color: white;
     background-color: #cc9f0a00;
-    border: 2px solid var(--cor-principal);
+    border: 3px solid var(--cor-principal);
 }
 
 /* ------ MENU HAMBURGUER MOBILE ------ */
