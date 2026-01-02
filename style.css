@@ -13,7 +13,7 @@
 
 body {
     font-family: var(--fonte-principal);
-    background-color: black
+    background-color: black;
 }
 
 /* ------ MENU ------ */
@@ -23,7 +23,7 @@ body {
     align-items: center;
     border-radius: 0 0 10px 10px;
     padding: 20px 5%;
-    background-color: #52525283;
+    background-color: rgba(82, 82, 82, 0.5);
     position: relative;
     z-index: 100;
 }
@@ -132,14 +132,14 @@ body {
 
 .hero-content h1 {
     font-size: 2.2rem;
-    font-weight: 600;
+    font-weight: 700;
     font-style: italic;
     margin-bottom: 15px;
     line-height: 1.2;
 }
 
 .hero-content p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: 10px;
     font-style: italic;
     opacity: 0.9;
@@ -147,11 +147,11 @@ body {
 
 .vagas-alerta {
     display: block;
-    color: #F7C311;
+    color: var(--cor-botao);
     font-weight: bold;
     font-style: italic;
     margin-bottom: 30px;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .btn-hero {
@@ -180,7 +180,120 @@ body {
 .hero-image img {
     max-width: 100%;
     height: auto;
+}
+
+/* ------ CRONÔMETRO CENTRALIZADO ------ */
+.countdown-section {
+    position: relative;
+    width: 100%;
+    z-index: 20;
+}
+
+.countdown-container {
+    background-color: var(--cor-principal);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 650px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.time-box {
+    text-align: center;
+    color: white;
+}
+
+.time-box span {
     display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--cor-botao);
+    font-style: italic;
+}
+
+.time-box p {
+    font-size: 0.9rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* ------ SOBRE E CARROSSEL INFINITO ------ */
+.about-section {
+    background-color: #d1d1d1;
+    padding: 120px 5% 80px;
+    border-radius: 40px 40px 0 0;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.carousel-wrapper {
+    position: relative;
+    height: 500px;
+    display: flex;
+    gap: 15px;
+    overflow: hidden;
+}
+
+.blur-top, .blur-bottom {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.blur-top {
+    top: 0;
+    background: linear-gradient(to bottom, #d1d1d1, transparent);
+}
+
+.blur-bottom {
+    bottom: 0;
+    background: linear-gradient(to top, #d1d1d1, transparent);
+}
+
+.carousel-column {
+    flex: 1;
+}
+
+.track {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.track img {
+    width: 95%;
+    height: 165px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.about-text h2 {
+    color: var(--cor-principal);
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #333;
+    line-height: 1.6;
+    font-style: italic;
 }
 
 /* ------ RESPONSIVIDADE ------ */
@@ -230,6 +343,7 @@ body {
     /* ------ SECTION HERO ------ */
     .hero {
         padding-top: 40px;
+        padding-bottom: 100px;
     }
 
     .hero-container {
@@ -259,7 +373,7 @@ body {
         line-height: 1.2;
     }
     .hero-content p {
-        font-size: 0.7rem;
+        font-size: 0.7rem !important;
         margin-bottom: 10px;
         font-style: italic;
         opacity: 0.9;
@@ -271,11 +385,69 @@ body {
         font-weight: bold;
         font-style: italic;
         margin-bottom: 30px;
-        font-size: 0.9rem;
+        font-size: 0.7rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
     }
 
     .btn-hero {
         width: 100%;
         max-width: 300px;
+    }
+
+    /* ------ SECTION CARROSSEL ------ */
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .countdown-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .time-box span {
+        font-size: 1.8rem;
+    }
+
+    /* Alinhamento da seção Sobre no Mobile */
+    .about-section {
+        padding-top: 80px;
+        text-align: center;
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: column-reverse; /* Texto em cima, Fotos embaixo */
+        gap: 30px;
+    }
+
+    .about-text h2 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    /* Carrossel Horizontal no Mobile */
+    .carousel-wrapper {
+        height: 200px; /* Reduz altura para mobile */
+        flex-direction: row; 
+        overflow: hidden;
+    }
+
+    .track img {
+        height: 150px; /* Imagens menores no mobile */
+        width: 250px;
+        min-width: 250px;
     }
 }
