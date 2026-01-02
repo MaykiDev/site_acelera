@@ -13,7 +13,7 @@
 
 body {
     font-family: var(--fonte-principal);
-    background-color: #1a1a1a;
+    background-color: black
 }
 
 /* ------ MENU ------ */
@@ -101,6 +101,88 @@ body {
     transform: translateY(-11px) rotate(-45deg);
 }
 
+/* ------ HERO SECTION ------ */
+.hero {
+    padding: 60px 5% 0 5%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    color: white;
+}
+
+.hero-logo {
+    width: 100%;
+    max-width: 580px;
+    margin-bottom: 30px;
+}
+
+.hero-content h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.vagas-alerta {
+    display: block;
+    color: #F7C311;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.btn-hero {
+    background-color: #2E2868;
+    color: white;
+    padding: 18px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-hero:hover {
+    transform: scale(1.05);
+    background-color: #3e368a;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* ------ RESPONSIVIDADE ------ */
 @media (max-width: 992px) {
     .logo img {
@@ -141,5 +223,57 @@ body {
 
     .nav-button-container {
         margin-top: 20px;
+    }
+
+    /* ------ SECTION HERO ------ */
+    .hero {
+        padding-top: 40px;
+    }
+
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        max-height: 400px;
+    }
+
+    .hero-logo {
+        max-width: 300px;
+        margin: -80px 0 20px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-style: italic;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    .hero-content p {
+        font-size: 0.7rem;
+        margin-bottom: 10px;
+        font-style: italic;
+        opacity: 0.9;
+    }
+
+    .vagas-alerta {
+        display: block;
+        color: #F7C311;
+        font-weight: bold;
+        font-style: italic;
+        margin-bottom: 30px;
+        font-size: 0.9rem;
+    }
+
+    .btn-hero {
+        width: 100%;
+        max-width: 300px;
     }
 }
