@@ -33,27 +33,27 @@ menuToggle.addEventListener('click', () => {
 
 function initInfiniteScroll(trackId, direction = 'up', speed = 1) {
     const track = document.getElementById(trackId);
-    const images = Array.from(track.children);
     
-    // Clona as imagens para garantir que o espaço esteja sempre preenchido
-    images.forEach(img => {
-        const clone = img.cloneNode(true);
-        track.appendChild(clone);
-    });
+    // 1. Duplicamos o conteúdo interno para criar a ilusão de continuidade
+    track.innerHTML += track.innerHTML; 
 
     let scrollPos = 0;
-    const scrollHeight = track.scrollHeight / 2; // Metade do conteúdo (original)
 
     function animate() {
+        // 2. O limite é a metade do scroll total (que é o conteúdo original)
+        const limit = track.scrollHeight / 2;
+
         if (direction === 'up') {
             scrollPos -= speed;
-            if (Math.abs(scrollPos) >= scrollHeight) {
-                scrollPos = 0; // Reset invisível
+            // Se subiu além do conteúdo original, reseta para o topo
+            if (Math.abs(scrollPos) >= limit) {
+                scrollPos = 0;
             }
         } else {
             scrollPos += speed;
+            // Se desceu além do topo, joga para a metade (fim do original)
             if (scrollPos >= 0) {
-                scrollPos = -scrollHeight; // Reset invisível
+                scrollPos = -limit;
             }
         }
 
@@ -64,9 +64,8 @@ function initInfiniteScroll(trackId, direction = 'up', speed = 1) {
     animate();
 }
 
-// Inicia as duas colunas com direções opostas
-// O número 1 é a velocidade (aumente para 2 ou 3 se quiser mais rápido)
+// Inicialização (mantendo suas velocidades e direções)
 window.onload = () => {
-    initInfiniteScroll('track1', 'up', 0.5);
-    initInfiniteScroll('track2', 'down', 0.5); 
+    initInfiniteScroll('track1', 'up', 0.8);
+    initInfiniteScroll('track2', 'down', 0.8); 
 };

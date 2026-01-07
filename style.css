@@ -296,6 +296,72 @@ body {
     font-style: italic;
 }
 
+/* ------ SEÇÃO POR QUE PARTICIPAR ------ */
+.benefits-section {
+    background-color: black;
+    padding: 80px 5%;
+    color: white;
+}
+
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefits-title {
+    text-align: center;
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.benefits-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.benefits-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.benefits-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 450px;
+}
+
+.benefits-text {
+    flex: 1;
+}
+
+.benefits-text ul {
+    list-style: none;
+}
+
+.benefits-text li {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* Criando o detalhe do marcador (ponto) */
+.benefits-text li::before {
+    content: "•";
+    color: white;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
 /* ------ RESPONSIVIDADE ------ */
 @media (max-width: 992px) {
 
@@ -408,7 +474,7 @@ body {
     }
 
     .countdown-container {
-        width: 95%;
+        width: 85%;
         padding: 15px;
     }
 
@@ -440,14 +506,91 @@ body {
 
     /* Carrossel Horizontal no Mobile */
     .carousel-wrapper {
-        height: 200px; /* Reduz altura para mobile */
+        height: 200px;
+        width: 200px;
+        gap: 0;
         flex-direction: row; 
         overflow: hidden;
     }
 
     .track img {
-        height: 150px; /* Imagens menores no mobile */
-        width: 250px;
-        min-width: 250px;
+        height: 250px; /* Imagens menores no mobile */
+        width: 0px;
+        min-width: 150px;
+    }
+
+    /* ------ AJUSTE DA SEÇÃO SOBRE / CARROSSEL MOBILE ------ */
+    
+    .about-section {
+        padding-top: 80px;
+        text-align: center;
+    }
+
+    .about-container {
+        display: flex;
+        flex-direction: column-reverse; /* Texto em cima, Fotos embaixo */
+        gap: 30px;
+    }
+
+    /* Esconde a segunda coluna de fotos no mobile */
+    .carousel-column:nth-child(3) { 
+        display: none;
+    }
+
+    .carousel-wrapper {
+        height: 250px; /* Altura do slide no mobile */
+        width: 100%;   /* Ocupa a largura total da tela */
+        max-width: 400px; /* Limite opcional para não esticar demais */
+        margin: 0 auto;
+        display: block; /* Muda de flex para block para focar em uma coluna */
+        overflow: hidden;
+    }
+
+    .carousel-column {
+        width: 100%;
+    }
+
+    .track img {
+        height: 230px; 
+        width: 100%;
+        min-width: 100%; /* Garante que a foto ocupe o slide todo */
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    /* Ajuste dos textos para mobile */
+    .about-text h2 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .about-text p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    /* Ajuste do Blur no mobile (opcional, para combinar com a altura menor) */
+    .blur-top, .blur-bottom {
+        height: 50px;
+    }
+
+    .benefits-content {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .benefits-image {
+        justify-content: center;
+    }
+
+    .benefits-text li {
+        padding-left: 0;
+        font-size: 1rem;
+    }
+
+    .benefits-text li::before {
+        display: none; /* Remove o marcador no mobile para centralizar melhor */
     }
 }
