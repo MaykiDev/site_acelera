@@ -362,6 +362,55 @@ body {
     font-weight: bold;
 }
 
+/* ------ SEÇÃO PÚBLICO-ALVO ------ */
+.target-section {
+    background-color: black;
+    padding: 60px 5% 100px;
+    color: white;
+    overflow: hidden; /* Garante que nada vaze para os lados */
+}
+
+.target-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-bottom: 50px;
+}
+
+.target-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.target-card {
+    background: linear-gradient(135deg, #e0e0e0 0%, #ffffff 100%);
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    transition: 0.3s;
+}
+
+.target-card img {
+    width: 60px;
+    margin-bottom: 25px;
+}
+
+.target-card p {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    font-style: italic;
+}
+
 /* ------ RESPONSIVIDADE ------ */
 @media (max-width: 992px) {
 
@@ -592,5 +641,38 @@ body {
 
     .benefits-text li::before {
         display: none; /* Remove o marcador no mobile para centralizar melhor */
+    }
+
+    .target-section {
+        overflow: hidden; /* Importante para não criar barra de scroll lateral no site */
+    }
+
+    .target-grid {
+        display: flex !important; /* Transforma em linha no mobile */
+        flex-direction: row !important;
+        flex-wrap: nowrap !important; /* PROIBIDO quebrar linha */
+        width: max-content !important; /* A fita cresce o quanto for preciso */
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .target-card {
+        flex-shrink: 0;
+        /* Largura ideal para aparecer um pedaço do próximo card, indicando que desliza */
+        min-width: 240px; 
+        max-width: 260px;
+        padding: 30px 15px; /* Diminuir o padding interno ajuda a reduzir a largura total */
+        min-height: 250px; /* Reduzir a altura mínima para acompanhar a largura */
+    }
+
+    .target-card p {
+        font-size: 0.9rem; /* Texto levemente menor para caber melhor */
+    }
+}
+
+/* Esconde os clones apenas no Desktop (ajustaremos no JS para o mobile) */
+@media (min-width: 993px) {
+    .target-card:nth-child(n+5) {
+        display: none !important;
     }
 }

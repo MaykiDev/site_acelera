@@ -69,3 +69,45 @@ window.onload = () => {
     initInfiniteScroll('track1', 'up', 0.8);
     initInfiniteScroll('track2', 'down', 0.8); 
 };
+
+
+function initHorizontalInfiniteScroll(className, speed = 1) {
+    const grid = document.querySelector(`.${className}`);
+    if (!grid) return;
+
+    // 1. Clona os cards para criar o espelho infinito
+    if (!grid.dataset.cloned) {
+        grid.innerHTML += grid.innerHTML; // Duplica os cards
+        grid.dataset.cloned = "true";
+    }
+
+    let scrollPos = 0;
+
+    function animate() {
+        if (window.innerWidth <= 992) {
+            // A mágica: pegamos a largura total e dividimos por 2
+            const halfWidth = grid.scrollWidth / 2;
+
+            scrollPos -= speed;
+
+            // Se a posição passar da metade, volta para 0
+            // Como a segunda metade é IDÊNTICA, ninguém percebe o salto
+            if (Math.abs(scrollPos) >= halfWidth) {
+                scrollPos = 0;
+            }
+
+            grid.style.transform = `translateX(${scrollPos}px)`;
+        } else {
+            // Reseta para o modo grade no Desktop
+            grid.style.transform = `translateX(0)`;
+        }
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+}
+
+// Inicializa quando carregar
+window.addEventListener('load', () => {
+    initHorizontalInfiniteScroll('target-grid', 0.8);
+});
