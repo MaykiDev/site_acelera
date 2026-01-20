@@ -111,3 +111,40 @@ function initHorizontalInfiniteScroll(className, speed = 1) {
 window.addEventListener('load', () => {
     initHorizontalInfiniteScroll('target-grid', 0.8);
 });
+
+function initSpeakersScroll() {
+    const track = document.getElementById('speakers-track');
+    if (!track) return;
+
+    // Clona os itens para criar o efeito infinito sem gap
+    const cards = Array.from(track.children);
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        track.appendChild(clone);
+    });
+
+    let scrollPos = 0;
+    const speed = 0.8; // Ajuste a velocidade aqui (menor = mais devagar)
+
+    function animate() {
+        scrollPos -= speed;
+        
+        // Quando chegar na metade (fim do set original), volta para 0
+        // O valor 30 é o gap que definimos no CSS
+        const totalWidth = track.scrollWidth / 2;
+        
+        if (Math.abs(scrollPos) >= totalWidth) {
+            scrollPos = 0;
+        }
+
+        track.style.transform = `translateX(${scrollPos}px)`;
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+}
+
+// Inicializa junto com as outras funções
+window.addEventListener('load', () => {
+    initSpeakersScroll();
+});

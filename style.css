@@ -527,6 +527,82 @@ body {
     margin-top: 20px;
 }
 
+/* ------ SEÇÃO PALESTRANTES ------ */
+.speakers-section {
+    background-color: black;
+    padding: 80px 0; /* Padding lateral 0 para o carrossel ir de ponta a ponta */
+    color: white;
+    overflow: hidden;
+}
+
+.speakers-container {
+    text-align: center;
+}
+
+.speakers-title {
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.speakers-subtitle {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    padding: 0 5%;
+    line-height: 1.5;
+}
+
+.speakers-carousel {
+    width: 100%;
+    overflow: hidden; /* Esconde o que sai da tela */
+    position: relative;
+}
+
+.speakers-track {
+    display: flex;
+    width: max-content; /* Permite que a linha cresça infinitamente */
+    gap: 30px;
+}
+
+.speaker-card {
+    width: 300px; /* Largura do card conforme design */
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.speaker-image-container {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 2px solid #2E2868; /* Cor principal do seu site */
+    margin-bottom: 20px;
+    padding: 10px;
+    position: relative;
+    background: linear-gradient(180deg, rgba(46, 40, 104, 0.2) 0%, rgba(0,0,0,0) 100%);
+}
+
+.speaker-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1); /* Estilo opcional para silhueta/foto profissional */
+}
+
+.speaker-info h3 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.speaker-info p {
+    font-size: 0.8rem;
+    font-style: italic;
+    opacity: 0.7;
+    line-height: 1.4;
+}
+
 /* ------ RESPONSIVIDADE ------ */
 @media (max-width: 992px) {
 
@@ -823,5 +899,12 @@ body {
     .schedule-img {
         /* No mobile, a imagem pode precisar de um pouco mais de destaque */
         transform: scale(1.05);
+    }
+
+    .speaker-card {
+        width: 240px;
+    }
+    .speakers-title {
+        font-size: 1.6rem;
     }
 }
