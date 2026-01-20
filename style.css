@@ -603,6 +603,164 @@ body {
     line-height: 1.4;
 }
 
+/* ------ SEÇÃO INGRESSOS ------ */
+.tickets-section {
+    background-color: #d1d1d1;
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.tickets-main-title {
+    color: black;
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-bottom: 50px;
+}
+
+.tickets-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Essencial para que um não estique o outro */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ticket-card {
+    background-color: black;
+    color: white;
+    padding: 40px 30px;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s ease; /* Atualize para 'all' para suavizar a altura */
+    height: auto; /* Garante que a altura seja baseada no conteúdo */
+}
+
+.ticket-name {
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.vip-label {
+    background-color: var(--cor-botao);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 8px;
+}
+
+.old-price {
+    color: var(--cor-botao);
+    text-decoration: line-through;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.main-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.price-x {
+    color: var(--cor-botao);
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.price-value {
+    font-size: 4.5rem;
+    font-weight: 800;
+}
+
+.price-value small {
+    font-size: 1.5rem;
+}
+
+.cash-price {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.btn-ticket-buy {
+    border: 1px solid #2E2868;
+    color: var(--cor-botao);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 12px;
+    width: 100%;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.vip-border {
+    border-color: var(--cor-botao);
+}
+
+.btn-toggle-benefits {
+    background: none;
+    border: none;
+    color: white;
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-toggle-benefits span {
+    color: var(--cor-botao);
+    transition: 0.3s;
+}
+
+/* Conteúdo escondido dos benefícios */
+.benefits-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    text-align: left;
+    width: 100%;
+}
+
+.benefits-content ul {
+    list-style: none;
+    padding: 20px 0 0 0;
+}
+
+.benefits-content li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.benefits-content li::before {
+    content: "•";
+    color: var(--cor-botao);
+    position: absolute;
+    left: 0;
+}
+
+/* Classe ativada pelo JS */
+.benefits-active {
+    max-height: 600px; /* Altura suficiente para os itens */
+}
+
+.rotate-arrow {
+    transform: rotate(90deg);
+}
+
 /* ------ RESPONSIVIDADE ------ */
 @media (max-width: 992px) {
 

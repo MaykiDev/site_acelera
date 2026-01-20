@@ -148,3 +148,19 @@ function initSpeakersScroll() {
 window.addEventListener('load', () => {
     initSpeakersScroll();
 });
+
+
+function toggleBenefits(type) {
+    // Localiza apenas o conteúdo e a seta do card clicado
+    const targetContent = document.getElementById(`benefits-${type}`);
+    const targetButton = targetContent.previousElementSibling;
+    const targetArrow = targetButton.querySelector('span');
+
+    // Alterna o estado (Abre se estiver fechado, fecha se estiver aberto)
+    targetContent.classList.toggle('benefits-active');
+    
+    // Rotaciona a seta do card clicado
+    if (targetArrow) {
+        targetArrow.classList.toggle('rotate-arrow');
+    }
+}
