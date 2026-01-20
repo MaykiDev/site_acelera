@@ -164,3 +164,16 @@ function toggleBenefits(type) {
         targetArrow.classList.toggle('rotate-arrow');
     }
 }
+
+function toggleFaq(button) {
+    const faqItem = button.parentElement;
+    
+    // Opcional: Fecha outros itens abertos ao clicar em um novo
+    /*
+    document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) item.classList.remove('active');
+    });
+    */
+
+    faqItem.classList.toggle('active');
+}

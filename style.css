@@ -761,6 +761,85 @@ body {
     transform: rotate(90deg);
 }
 
+/* ------ SEÇÃO FAQ ------ */
+.faq-section {
+    background-color: black;
+    padding: 80px 5%;
+    color: white;
+}
+
+.faq-main-title {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+}
+
+.faq-container {
+    background-color: #d1d1d1; /* Cinza da imagem */
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 50px; /* Bordas bem arredondadas conforme imagem */
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    font-family: var(--fonte-principal);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2E2868; /* Roxo principal */
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.faq-arrow {
+    background-color: #a8b2bd; /* Cor azulada/cinza do botão na imagem */
+    color: white;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.faq-answer p {
+    color: #444;
+    padding-bottom: 20px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Estado Ativo */
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Altura suficiente para o texto */
+}
+
+.faq-item.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
 /* ------ RESPONSIVIDADE ------ */
 @media (max-width: 992px) {
 
@@ -1062,7 +1141,16 @@ body {
     .speaker-card {
         width: 240px;
     }
+    
     .speakers-title {
         font-size: 1.6rem;
+    }
+
+    .faq-container {
+        padding: 25px;
+        border-radius: 30px;
+    }
+    .faq-question {
+        font-size: 1rem;
     }
 }
