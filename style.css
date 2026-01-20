@@ -486,6 +486,46 @@ body {
     color: white;
 }
 
+/* ------ SEÇÃO PROGRAMAÇÃO ------ */
+.schedule-section {
+    background-color: #d1d1d1; /* Fundo cinza claro conforme a imagem */
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.schedule-container {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.schedule-title {
+    color: var(--cor-principal);
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.schedule-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.schedule-img {
+    max-width: 100%;
+    height: auto;
+    /* Filtro leve para garantir que o tom de roxo combine com sua identidade */
+    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.1));
+}
+
+.schedule-cta {
+    margin-top: 20px;
+}
 
 /* ------ RESPONSIVIDADE ------ */
 @media (max-width: 992px) {
@@ -769,5 +809,19 @@ body {
 
     .features-main-title {
         font-size: 1.2rem;
+    }
+
+    .schedule-section {
+        padding: 60px 5%;
+    }
+    
+    .schedule-title {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+    }
+
+    .schedule-img {
+        /* No mobile, a imagem pode precisar de um pouco mais de destaque */
+        transform: scale(1.05);
     }
 }
